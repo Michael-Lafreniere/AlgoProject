@@ -1,0 +1,26 @@
+{
+  "name": "algoproject",
+  "version": "1.0.0",
+  "description": "A practice project writing 15-20 of the most common CS algorithms.",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michael-Lafreniere/AlgoProject.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Algorithms"
+  ],
+  "author": "Michael Lafreniere",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Michael-Lafreniere/AlgoProject/issues"
+  },
+  "homepage": "https://github.com/Michael-Lafreniere/AlgoProject#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}

@@ -6,7 +6,18 @@ A lot of these algorithm ideas came from [Algo Expert](https://www.algoexpert.io
 
 ## Installation & Usage
 
-Simply clone this, and in Microsoft Visual Code open main.js, hit ctrl + shift + d (in Windows anyway) to open the Debug nav bar. Open a console with ctrl + ` and switch to the Debug Console and hit the play button in the Debug nav window.
+Simply clone the repository using github or a command line tool.
+
+Then create a directory and change into it and run npm install
+
+Example:
+
+```
+mkdir directory_name
+cd directory_name
+git clone https://github.com/Michael-Lafreniere/AlgoProject.git
+npm install
+```
 
 You can comment out functions you're not interested in seeing run/results from.
 
