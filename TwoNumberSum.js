@@ -13,7 +13,7 @@
 // our current sum and target sum are equal we return an array in order (left then right)
 // otherwise we return an empty array.
 
-twoNumberSum = (input, targetSum) => {
+const twoNumberSum = (input, targetSum) => {
   input.sort((a, b) => a - b);
   let left = 0;
   let right = input.length - 1;
@@ -30,4 +30,4 @@ twoNumberSum = (input, targetSum) => {
   return [];
 };
 
-module.exports.func = twoNumberSum;
+module.exports = { twoNumberSum };
