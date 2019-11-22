@@ -1,4 +1,4 @@
-// Find Closest Value within a BST
+// Find Closest Value within a BST:
 
 // You are given a BST data structure consisting of BST nodes.  Each BST node has an integer value stored
 // in a property called "value" and two children nodes store in properties called left/right respectively.
@@ -13,11 +13,11 @@
 //
 //      10      Find: 12
 //     /  \
-//    5    15
+//    5    17
 //   / \   / \
-//  2   5 13  22
+//  4   5 13  22
 // /       \
-//1         14
+//2         19
 
 // My Solution:
 
