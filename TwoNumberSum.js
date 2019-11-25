@@ -30,4 +30,14 @@ const twoNumberSum = (input, targetSum) => {
   return [];
 };
 
-module.exports = { twoNumberSum };
+const twoNumberSumTest = () => {
+  const twoNumSumArray = [3, 5, -4, 8, 20, 9, -1, 2];
+  const twoNumSumTarget = 10;
+  const twoNumResult = twoNumberSum(twoNumSumArray, twoNumSumTarget);
+
+  console.log(
+    `Two Number Sum array is [${twoNumSumArray}], target sum is ${twoNumSumTarget} and the result is [${twoNumResult}]`
+  );
+};
+
+module.exports = { twoNumberSum, twoNumberSumTest };
