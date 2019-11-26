@@ -23,9 +23,7 @@ const subStringMatch = (string, pattern) => {
   let i = 0;
   while (i < string.length) {
     let j = 0;
-    //console.log(`i=${i}, j=${j}, p=${p}`);
     while (string[i + j] === pattern[p]) {
-      //console.log(`match: j=${j}, p=${p}`);
       j++;
       p++;
       if (p === pattern.length) return i;
