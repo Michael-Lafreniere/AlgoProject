@@ -3,9 +3,11 @@ const { BST, findClosestTest } = require('./FindClosestInBST');
 const { depthFirstTest } = require('./DepthFirstSearch');
 const { linkedListTest } = require('./LinkList');
 const { fibTest } = require('./Fibonacci');
+const { subStringMatchTest } = require('./KMPSubString');
 
-twoNumberSumTest();
-findClosestTest();
-depthFirstTest();
-linkedListTest();
-fibTest();
+//twoNumberSumTest();   // -- Working
+//findClosestTest();    // -- Working
+//depthFirstTest();     // -- Working
+//linkedListTest();     // -- Working
+//fibTest();            // -- Working
+subStringMatchTest(); // -- Testing...
