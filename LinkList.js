@@ -8,7 +8,7 @@
 // along with searching for nodes with values.  Only the searching function should return a value, specifically a boolean.
 //
 
-class Node {
+class linkNode {
   constructor(value) {
     this.value = value;
     this.prev = null;
@@ -116,6 +116,17 @@ class LinkedList {
     return false;
   }
 
+  printList() {
+    if (this.head === null) return;
+    let node = this.head;
+    let list = [];
+    while (node !== null) {
+      list.push(node.value);
+      node = node.next;
+    }
+    console.log(list);
+  }
+
   removeNodeBindings(node) {
     if (node.prev !== null) node.prev.next = node.next;
     if (node.next !== null) node.next.prev = node.prev;
@@ -157,8 +168,8 @@ const expectedResults = (testNumber, linkedList, head, tail) => {
 
 const linkedListTest = () => {
   const list = new LinkedList();
-  const first = new Node(1);
-  const second = new Node(2);
+  const first = new linkNode(1);
+  const second = new linkNode(2);
   const nodes = [first, second];
 
   list.setHead(first);
@@ -180,6 +191,7 @@ const linkedListTest = () => {
   list.insertAtPosition(2, first);
   list.insertAtPosition(1, second);
   expectedResults('5', list, second, first);
+  //list.printList();
 };
 
-module.exports = { Node, LinkedList, linkedListTest };
+module.exports = { linkNode, LinkedList, linkedListTest };
