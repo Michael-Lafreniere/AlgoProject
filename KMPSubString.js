@@ -6,70 +6,75 @@
 // through the string without having to go back.
 //
 
-const findPrefixSuffixMatch = (pattern, length = 0) => {
-  let len = 0;
-  let i = 0;
-  for (let j = i + 1; j < length; j++) {
-    if (pattern[i] === pattern[j]) {
-      len = i + 1;
+const findPattern = substring => {
+  let pattern = new Array(substring.length).fill(-1);
+  let i = 1;
+  let j = 0;
+  while (i < substring.length) {
+    if (substring[i] === substring[j]) {
+      pattern[i] = j;
       i++;
-    }
-  }
-  return len;
-};
-
-const subStringMatch = (string, pattern) => {
-  let p = 0;
-  let i = 0;
-  while (i < string.length) {
-    let j = 0;
-    while (string[i + j] === pattern[p]) {
       j++;
-      p++;
-      if (p === pattern.length) return i;
-    }
-
-    if (j > 1) {
-      p = findPrefixSuffixMatch(pattern, p);
-      i = i + j;
+    } else if (j > 0) {
+      j = pattern[j - 1] + 1;
     } else {
-      p = 0;
       i++;
     }
   }
-
-  return -1;
+  return pattern;
 };
 
-const quickTest = (string, pattern) => {
-  const position = subStringMatch(string, pattern);
+const KMPSubStringExists = (string, substring) => {
+  let pattern = findPattern(substring);
+  let i = 0;
+  let j = 0;
+  while (i + substring.length - j <= string.length) {
+    if (string[i] === substring[j]) {
+      if (j === substring.length - 1) return true;
+      i++;
+      j++;
+    } else if (j > 0) {
+      j = pattern[j - 1] + 1;
+    } else {
+      i++;
+    }
+  }
+  return false;
+};
 
-  if (position >= 0) {
+const quickTest = (string, substring) => {
+  const exists = KMPSubStringExists(string, substring);
+
+  if (exists) {
     console.log(
-      `KMP Sub String Search(${string} with ${pattern}) found at ${position}`
+      `KMP Sub String Search(${string} with ${substring}) found in string`
     );
   } else {
     console.log(
-      `KMP Sub String Search(${string} with pattern ${pattern}) not found!`
+      `KMP Sub String Search(${string} with pattern ${substring}) not found!`
     );
   }
 };
 
 const subStringMatchTest = () => {
   const string = 'abcxabcdabxabcdabcdabcy';
-  const pattern = 'abcdabcy';
+  const substring = 'abcdabcy';
   const string2 = 'adsgwadsxdsgwadsgz';
-  const pattern2 = 'dsgwadsgz';
+  const substring2 = 'dsgwadsgz';
   // Fail:
   const string3 = 'asldfjilajwejflaksjjdlfijalawiejf';
-  const pattern3 = '23r4k';
+  const substring3 = '23r4k';
+  // Pass:
   const string4 = 'aslfjilajwe2laijsljlkfjiqojalvvnxlkj';
-  const pattern4 = '2laijsl';
+  const substring4 = '2laijsl';
+  const string5 = 'aaabaabacdedfaabaabaaa';
+  const substring5 = 'aabaabaaa';
 
-  quickTest(string, pattern);
-  quickTest(string2, pattern2);
-  quickTest(string3, pattern3);
-  quickTest(string4, pattern4);
+  quickTest(string, substring);
+  quickTest(string2, substring2);
+  quickTest(string3, substring3);
+  quickTest(string4, substring4);
+  quickTest(string5, substring5);
 };
 
-module.exports = { subStringMatch, subStringMatchTest };
+module.exports = { KMPSubStringExists, subStringMatchTest };

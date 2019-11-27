@@ -10,4 +10,4 @@ const { subStringMatchTest } = require('./KMPSubString');
 //depthFirstTest();     // -- Working
 //linkedListTest();     // -- Working
 //fibTest();            // -- Working
-subStringMatchTest(); // -- Testing...
+subStringMatchTest(); // -- Working
